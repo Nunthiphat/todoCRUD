@@ -4,9 +4,8 @@ const workSchema = new Schema(
     {
         title: String,
         description: String,
-    },
-    {
-        timestamps: true,
+        status: Boolean,
+        duedate: String
     }
 );
 

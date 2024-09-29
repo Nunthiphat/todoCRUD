@@ -3,9 +3,9 @@ import Work from "@/models/work";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
-    const { title, description } = await request.json();
+    const { title, description, status, duedate } = await request.json();
     await connectMongoDB();
-    await Work.create({title, description});
+    await Work.create({ title, description, status, duedate });
     return NextResponse.json({ message: "Work Created" }, { status: 201 } );
 }
 
